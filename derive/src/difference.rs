@@ -910,7 +910,7 @@ pub(crate) fn derive_struct_diff_struct(struct_: &Struct) -> TokenStream {
             })
             .collect::<Vec<_>>()
             .join(", ");
-        let end = "\")]";
+        let end = "\", tag = \"field\", content = \"value\")]";
         [start, &mid, end].join("")
     };
     #[cfg(not(feature = "serde"))]
@@ -1411,7 +1411,7 @@ pub(crate) fn derive_struct_diff_enum(enum_: &Enum) -> TokenStream {
             })
             .collect::<Vec<_>>()
             .join(", ");
-        let end = "\")]";
+        let end = "\", tag = \"field\", content = \"value\")]";
         [start, &mid, end].join("")
     };
     #[cfg(not(feature = "serde"))]
